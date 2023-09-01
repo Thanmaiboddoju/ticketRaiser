@@ -1,0 +1,40 @@
+.mainboard{
+    margin: 20px;
+    background:rgb(231 231 230 / 51%);
+    border-radius: 8px;
+}
+
+.tickets_board{
+    padding: 16px;
+    
+}
+
+.table_row_tickets{
+    background:white;
+    border: 1px solid rgb(231 231 230 / 51%) ;
+    padding: 10px ;
+    /* display:grid; */
+    font-size: 14px;
+    color: rgb(83, 91, 91);
+}
+
+.grid-item{
+    display: inline-grid;
+    
+}
+
+.create_issue_button{
+    font-size: 16px;
+}
+
+.complete_issue_button{
+    color: green;
+}
+
+.status_button{
+    background:rgb(129, 197, 129);
+    color:green;
+    width:fit-content;
+    border-radius: 4px ;
+    text-align: center;
+}

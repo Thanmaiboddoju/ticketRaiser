@@ -1,0 +1,50 @@
+<div class="mainboard">
+
+    <div class="tickets_board">
+        <!-- <button (click)="getTicketsList()">Tickets of today </button> -->
+        <div class="table_row_tickets" *ngFor="let task of tasksList">
+
+            <div style="display: flex;">
+                <div style="width: 80%;">{{task.issue}}</div>
+                <div style="width: 10%;">{{task.category}}</div>
+                <div style="width: 10%;" *ngIf="task?.status=='completed';else completebutton" class="status_button">{{task?.status}}</div>
+                <ng-template #completebutton>
+                    <i class="fa fa-check" aria-hidden="true" style="color: forestgreen;width: 10%;cursor: pointer;"
+                        (click)="completeTask(task._id)">
+                        Complete
+                    </i>
+                    <i class="fa fa-times" aria-hidden="true" style="color:rgb(186, 53, 53);width: 10%;cursor: pointer;"
+                    (click)="deleteTask(task._id)">  Delete</i>
+                    
+                </ng-template>
+            </div>
+        </div>
+        
+        <div *ngIf="create_issue_button;else else_issue_block"
+            style="display: flex;justify-content: space-between;padding:5px 0px"
+            >
+            <input placeholder="enter the issue" style="width: 80%;" [(ngModel)]="newTask" />
+            <!-- <div >
+                <mat-form-field>
+                    <mat-select style="position: relative" [(value)]="newTaskCategory">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                </mat-form-field>
+    
+            </div> -->
+            <i class="fa fa-check" aria-hidden="true" style="color: forestgreen;width: 10%;cursor: pointer;"
+                (click)="addTask()">Add</i>
+            <i class="fa fa-times" aria-hidden="true" style="color:rgb(186, 53, 53);width: 10%;cursor: pointer;"
+                (click)="disableCreateIssue()">Discard</i>
+        </div>
+
+        <ng-template #else_issue_block>
+            <button style="background: none;border: none;" class="create_issue_button" (click)="createIssue()"> + Create
+                issue</button>
+        </ng-template>
+
+    </div>
+</div>

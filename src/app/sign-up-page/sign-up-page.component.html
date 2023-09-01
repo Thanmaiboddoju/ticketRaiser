@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+</head>
+<body>
+    <div class="signup_page_container">
+        <form [formGroup]="signup_credentials" (ngSubmit)="signup_submit()">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" formControlName="userName" >
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" formControlName="gmail">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            
+            <!-- <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control">
+            </div> -->
+            <div  >
+            <button type="submit" class="form-button">Sign up</button>
+        </div>
+        <div  >
+            <button class="form-button-anchor" routerLink="/login">Log in</button>
+        </div>
+        </form>
+        <button (click)="get_users()">Click to see users</button>
+        
+    </div>
+    
+</body>
+</html>
